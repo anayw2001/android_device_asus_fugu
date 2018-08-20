@@ -30,10 +30,10 @@
 
 #include <string>
 
-#include "common.h"
-#include "device.h"
-#include "ui.h"
-#include "screen_ui.h"
+#include "recovery_ui/common.h"
+#include "recovery_ui/device.h"
+#include "recovery_ui/ui.h"
+#include "recovery_ui/screen_ui.h"
 
 #define kFBDevice "/dev/graphics/fb0"
 
