@@ -18,7 +18,7 @@ include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := optional
-LOCAL_C_INCLUDES += bootable/recovery
+LOCAL_SHARED_LIBRARIES := librecovery_ui
 LOCAL_SRC_FILES := recovery_ui.cpp
 LOCAL_CFLAGS := -Wall -Werror
 
