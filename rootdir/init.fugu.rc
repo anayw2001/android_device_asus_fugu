@@ -46,9 +46,6 @@ on init
     mount sepfs sepfs /sys/fs/sepfs
 
 on fs
-    mkdir /logs 0770 system log
-    mkdir /factory 0775 system system
-
     mount_all /vendor/etc/fstab.fugu
     swapon_all /vendor/etc/fstab.fugu
 
