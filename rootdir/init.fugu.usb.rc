@@ -35,7 +35,7 @@ on post-fs-data
 on boot
     write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
     write /sys/class/android_usb/android0/iProduct ${ro.product.model}
-    setprop sys.mtp.device_type 2
+    setprop sys.usb.mtp.device_type 2
 
 # Used to disable USB when switching states
 on property:sys.usb.config=none
