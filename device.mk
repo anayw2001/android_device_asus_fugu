@@ -24,6 +24,10 @@ $(call inherit-product-if-exists, vendor/intel/moorefield/prebuilts/houdini/houd
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+## APEX
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
+
 ## Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
