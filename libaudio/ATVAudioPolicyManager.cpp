@@ -44,7 +44,13 @@ extern AudioHardwareOutput gAudioHardwareOutput;
 extern "C" AudioPolicyInterface* createAudioPolicyManager(
         AudioPolicyClientInterface *clientInterface)
 {
-    return new ATVAudioPolicyManager(clientInterface);
+     ATVAudioPolicyManager *apm = new ATVAudioPolicyManager(clientInterface);
+     status_t status = apm->initialize();
+     if (status != NO_ERROR) {
+         delete apm;
+         apm = nullptr;
+     }
+     return apm;
 }
 
 extern "C" void destroyAudioPolicyManager(AudioPolicyInterface *interface)
