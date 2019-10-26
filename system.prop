@@ -32,6 +32,7 @@ ro.enable.native.bridge.exec=1
 ro.nrdp.modelgroup=NEXUSPLAYERFUGU
 
 ## OMX
+debug.stagefright.ccodec=0
 media.stagefright.cache-params=10240/20480/15
 # Set service to non-Treble
 persist.media.treble_omx=false
