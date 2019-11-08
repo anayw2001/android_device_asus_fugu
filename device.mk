@@ -214,7 +214,7 @@ PRODUCT_PACKAGES += \
 
 ## Ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.fugu:root/fstab.fugu \
+    $(LOCAL_PATH)/rootdir/fstab.fugu:$(TARGET_OUT_VENDOR)/etc/fstab.fugu \
     $(LOCAL_PATH)/rootdir/init.fugu.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fugu.rc \
     $(LOCAL_PATH)/rootdir/init.fugu.countrycode.sh:system/bin/init.fugu.countrycode.sh \
     $(LOCAL_PATH)/rootdir/init.fugu.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fugu.usb.rc \
