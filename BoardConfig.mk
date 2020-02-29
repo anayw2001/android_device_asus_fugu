@@ -55,6 +55,7 @@ TARGET_BOOTLOADER_IS_2ND := true
 DONT_DEXPREOPT_PREBUILTS := true
 # Don't uncompress dex files in priv apps APKs to save on space.
 DONT_UNCOMPRESS_PRIV_APPS_DEXS := true
+WITH_DEXPREOPT_DEBUG_INFO := false
 
 ## DRM Protected Video
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
