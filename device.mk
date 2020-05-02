@@ -216,11 +216,11 @@ PRODUCT_PACKAGES += \
 ## Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.fugu:root/fstab.fugu \
-    $(LOCAL_PATH)/rootdir/init.fugu.rc:root/init.fugu.rc \
+    $(LOCAL_PATH)/rootdir/init.fugu.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fugu.rc \
     $(LOCAL_PATH)/rootdir/init.fugu.countrycode.sh:system/bin/init.fugu.countrycode.sh \
-    $(LOCAL_PATH)/rootdir/init.fugu.usb.rc:root/init.fugu.usb.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.fugu.rc:root/ueventd.fugu.rc \
-    $(LOCAL_PATH)/recovery/root/init.recovery.fugu.rc:root/init.recovery.fugu.rc
+    $(LOCAL_PATH)/rootdir/init.fugu.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fugu.usb.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.fugu.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+    $(LOCAL_PATH)/recovery/root/init.recovery.fugu.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.fugu.rc
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_COPY_FILES += \

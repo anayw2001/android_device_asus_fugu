@@ -1,4 +1,4 @@
-# This file gets copied as /init.fugu.diag.rc
+# This file gets copied as /vendor/etc/init.fugu.diag.rc
 
 on boot
     # Voice search logging collection
