@@ -46,7 +46,7 @@ on init
     mount sepfs sepfs /sys/fs/sepfs
 
 on fs
-    mount_all /vendor/etc/fstab.fugu
+    mount_all /vendor/etc/fstab.fugu --early
     swapon_all /vendor/etc/fstab.fugu
 
     restorecon_recursive /factory
@@ -54,6 +54,14 @@ on fs
     setprop sys.usb.ffs.aio_compat 1
     setprop persist.adb.nonblocking_ffs 0
     setprop ro.adb.nonblocking_ffs 0
+
+on late-fs
+    # Start services for Boot Animation
+    start servicemanager
+    start surfaceflinger
+    start bootanim
+    # Mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.qcom --late
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
