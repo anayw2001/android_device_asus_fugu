@@ -117,6 +117,9 @@ KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/x86/x86_64-linux-a
 ## Legacy
 MALLOC_SVELTE := true
 
+## Legacy memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 ## Media
 # Sets IPP library optimization to use
 MFX_IPP := p8
