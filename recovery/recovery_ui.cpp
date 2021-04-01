@@ -30,7 +30,6 @@
 
 #include <string>
 
-#include "recovery_ui/common.h"
 #include "recovery_ui/device.h"
 #include "recovery_ui/ui.h"
 #include "recovery_ui/screen_ui.h"
