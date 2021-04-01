@@ -185,7 +185,6 @@ lib/libcommon_time_client.so
 lib/libdrmframework.so
 lib/libdrmframework_jni.so
 lib/libdx_cc7.so
-lib/libFFTEm.so
 lib/libfilterfw.so
 lib/libfilterpack_imageproc.so
 lib/libgabi++-mfx.so
