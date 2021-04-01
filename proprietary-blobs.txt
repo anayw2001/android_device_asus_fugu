@@ -175,21 +175,11 @@ lib/arm/nb/libui.so
 lib/arm/nb/libutils.so
 lib/arm/nb/libz.so
 
-lib/libatv_audio.so
-lib/libbcc.so
 lib/libcommon_time_client.so
-lib/libdrmframework.so
-lib/libdrmframework_jni.so
 lib/libdx_cc7.so
-lib/libfilterfw.so
-lib/libfilterpack_imageproc.so
 lib/libgabi++-mfx.so
 lib/libhoudini.so
 lib/libifp.so
-#lib/libinputflinger.so
-lib/libion.so
-lib/libkeymaster.so
-lib/libLLVM.so
 lib/libmfx_omx_components_sw.so
 lib/libmfx_omx_core.so
 lib/libmfxsw32.so
@@ -200,17 +190,9 @@ lib/libmixvbp_mpeg4.so
 lib/libmixvbp.so
 lib/libmixvbp_vc1.so
 lib/libmixvbp_vp8.so
-lib/libnetutils.so
-lib/libnl.so
-lib/libOMXVideoDecoderAVCSecure.so
-lib/libopus.so
-lib/libpcre2.so
-lib/libpcrecpp.so
 -lib/libremotecontrolservice.so
 lib/libsepdrm_cc54.so
-lib/libstagefright_enc_common.so
 lib/libstlport-mfx.so
-lib/libsysutils.so
 lib/libwebrtc_audio_preprocessing.so
 
 lib/hw/hdmi_cec.fugu.so
@@ -237,7 +219,6 @@ vendor/lib/hw/gralloc.moorefield.so
 vendor/lib/hw/memtrack.moorefield.so
 vendor/lib/hw/vulkan.moorefield.so
 vendor/lib/libDecoderVP9Hybrid.so
-vendor/lib/libeffects.so
 vendor/lib/libglslcompiler.so
 vendor/lib/libIMGegl.so
 vendor/lib/liboemcrypto.so
@@ -249,6 +230,5 @@ vendor/lib/libseppr_hal.so
 vendor/lib/libsrv_um.so
 vendor/lib/libufwriter.so
 vendor/lib/libusc.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libplayreadydrmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so

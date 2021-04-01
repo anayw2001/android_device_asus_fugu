@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.stub.default \
     audio.usb.default \
+    libatv_audio \
     libaudio-resampler \
     libtinyalsa
 
