@@ -238,6 +238,10 @@ PRODUCT_COPY_FILES += \
 ## Shipping API
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l.mk)
 
+## Soong
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 ## Stagefright
 PRODUCT_PACKAGES += \
     libstagefrighthw
