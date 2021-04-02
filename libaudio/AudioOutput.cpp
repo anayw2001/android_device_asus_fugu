@@ -26,7 +26,7 @@
 #include <sys/ioctl.h>
 
 #include <audio_utils/primitives.h>
-#include <common_time/local_clock.h>
+#include "local_clock.h"
 
 #define __DO_FUNCTION_IMPL__
 #include "alsa_utils.h"

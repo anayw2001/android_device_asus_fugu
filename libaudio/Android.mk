@@ -28,7 +28,8 @@ LOCAL_SRC_FILES := \
     AudioHardwareInput.cpp \
     AudioStreamIn.cpp \
     AudioHotplugThread.cpp \
-    LinearTransform.cpp
+    LinearTransform.cpp \
+    local_clock.cpp
 
 LOCAL_C_INCLUDES := \
     external/tinyalsa/include \
@@ -40,6 +41,7 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     libmedia \
     libbinder \
+    libhardware \
     libtinyalsa \
     libaudiospdif \
     libaudioutils
