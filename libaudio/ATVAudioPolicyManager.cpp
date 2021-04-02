@@ -61,9 +61,10 @@ ATVAudioPolicyManager::ATVAudioPolicyManager(
 status_t ATVAudioPolicyManager::setDeviceConnectionState(audio_devices_t device,
                                                          audio_policy_dev_state_t state,
                                                          const char *device_address,
-                                                         const char *device_name)
+                                                         const char *device_name,
+                                                         audio_format_t encodedFormat)
 {
-    audio_devices_t tmp = AUDIO_DEVICE_NONE;;
+    audio_devices_t tmp = AUDIO_DEVICE_NONE;
     ALOGE("setDeviceConnectionState %08x %x %s", device, state,
           device_address ? device_address : "(null)");
 
@@ -81,11 +82,15 @@ status_t ATVAudioPolicyManager::setDeviceConnectionState(audio_devices_t device,
     if (audio_is_output_device(device)) {
       switch (state) {
           case AUDIO_POLICY_DEVICE_STATE_AVAILABLE:
-              tmp = mAvailableOutputDevices.types() | device;
+              for (auto outputDevice : mAvailableOutputDevices.types()) {
+                  tmp |= (outputDevice | device);
+              }
               break;
 
           case AUDIO_POLICY_DEVICE_STATE_UNAVAILABLE:
-              tmp = mAvailableOutputDevices.types() & ~device;
+              for (auto outputDevice : mAvailableOutputDevices.types()) {
+                  tmp |= (outputDevice & ~device);
+              }
               break;
           default:
               ALOGE("setDeviceConnectionState() invalid state: %x", state);
@@ -93,18 +98,26 @@ status_t ATVAudioPolicyManager::setDeviceConnectionState(audio_devices_t device,
       }
 
       gAudioHardwareOutput.updateRouting(tmp);
-      tmp = mAvailableOutputDevices.types();
+      tmp = AUDIO_DEVICE_NONE;
+      for (auto outputDevice : mAvailableOutputDevices.types()) {
+          tmp |= outputDevice;
+      }
     }
 
     status_t ret = 0;
     if (device != AUDIO_DEVICE_IN_REMOTE_SUBMIX) {
       ret = AudioPolicyManager::setDeviceConnectionState(
-                    device, state, device_address, device_name);
+                    device, state, device_address, device_name, encodedFormat);
     }
 
     if (audio_is_output_device(device)) {
-      if (tmp != mAvailableOutputDevices.types())
-          gAudioHardwareOutput.updateRouting(mAvailableOutputDevices.types());
+      audio_devices_t tmp2 = tmp;
+      tmp = AUDIO_DEVICE_NONE;
+      for (auto outputDevice : mAvailableOutputDevices.types()) {
+          tmp |= outputDevice;
+      }
+      if (tmp != tmp2)
+          gAudioHardwareOutput.updateRouting(device);
     }
 
     return ret;
@@ -114,9 +127,12 @@ audio_devices_t ATVAudioPolicyManager::getDeviceForInputSource(audio_source_t in
 {
     uint32_t device = AUDIO_DEVICE_NONE;
     bool usePhysRemote = true;
-    const audio_devices_t availableDeviceTypes = mAvailableInputDevices.types() &
-            ~AUDIO_DEVICE_BIT_IN;
-
+    audio_devices_t availableDeviceTypes;
+    for (auto inputDevice : mAvailableInputDevices.types()) {
+            if ((inputDevice & ~AUDIO_DEVICE_BIT_IN) == inputSource) {
+                availableDeviceTypes = inputDevice;
+            }
+    }
     if (inputSource == AUDIO_SOURCE_VOICE_RECOGNITION ||
             inputSource == AUDIO_SOURCE_UNPROCESSED) {
 #ifdef REMOTE_CONTROL_INTERFACE
