@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+
 DEVICE_PATH := device/asus/fugu
 
 ## Use the non-open-source parts, if they're present
@@ -135,6 +137,7 @@ TARGET_HAS_ISV := true
 BOARD_FLASH_BLOCK_SIZE := 2048
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x2000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x2000000
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE := 260014080
 BOARD_ROOT_EXTRA_FOLDERS := factory logs
 # As of 3562118, inode usage was 2149, use 4096 to be safe
