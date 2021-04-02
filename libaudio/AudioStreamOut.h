@@ -21,7 +21,7 @@
 #include <stdint.h>
 #include <sys/types.h>
 
-#include <common_time/local_clock.h>
+#include "local_clock.h"
 #include <hardware/audio.h>
 #include <media/AudioParameter.h>
 

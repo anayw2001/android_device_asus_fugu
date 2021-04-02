@@ -23,7 +23,7 @@
 #include <limits.h>
 #include <math.h>
 
-#include <common_time/local_clock.h>
+#include "local_clock.h"
 #include <cutils/properties.h>
 
 #include "AudioHardwareOutput.h"
