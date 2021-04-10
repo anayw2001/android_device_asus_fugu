@@ -58,6 +58,7 @@ PRODUCT_COPY_FILES += \
 
 ## Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-service \
     android.hardware.bluetooth@1.0-impl \
     bt_bcm4354 \
     libbt-vendor
@@ -92,11 +93,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.0-service.fugu
 
+## Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
+
 ## Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.mapper@2.0-impl-2.1 \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.mapper@2.0-impl \
     IMG_graphics \
     hwcomposer.moorefield \
     libion
@@ -111,6 +118,12 @@ PRODUCT_PACKAGES += \
 ## HDMI-CEC
 PRODUCT_PACKAGES += \
     android.hardware.tv.cec@1.0-impl
+
+## Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-impl.recovery \
+    android.hardware.health@2.1-service
 
 ## Houdini
 # Set the prop to enable arm native bridge
@@ -147,11 +160,14 @@ PRODUCT_COPY_FILES += \
 
 ## Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service \
+    libkeymaster
 
 ## Memtrack
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service
 
 ## OMX
 PRODUCT_PACKAGES += \
@@ -168,6 +184,7 @@ PRODUCT_PACKAGES += \
     libmixvbp_mpeg2 \
     libmixvbp \
     libOMXVideoDecoderAVC \
+    libOMXVideoDecoderAVCSecure \
     libOMXVideoDecoderH263 \
     libOMXVideoDecoderMPEG2 \
     libOMXVideoDecoderMPEG4 \
@@ -211,11 +228,13 @@ PRODUCT_COPY_FILES += \
 ## Power
 PRODUCT_PACKAGES += \
     power.fugu \
-    android.hardware.power@1.0-impl
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service
 
 ## Ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.fugu:$(TARGET_OUT_VENDOR)/etcfstab.fugu \
+    $(LOCAL_PATH)/rootdir/fstab.fugu:$(TARGET_COPY_OUT_RAMDISK)/fstab.fugu \
+    $(LOCAL_PATH)/rootdir/fstab.fugu:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.fugu \
     $(LOCAL_PATH)/rootdir/init.fugu.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fugu.rc \
     $(LOCAL_PATH)/rootdir/init.fugu.countrycode.sh:system/bin/init.fugu.countrycode.sh \
     $(LOCAL_PATH)/rootdir/init.fugu.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fugu.usb.rc \
@@ -286,9 +305,12 @@ PRODUCT_PACKAGES += \
     vsp.bin.0008.0002.0001 \
     vsp.bin.000c.0001.0001
 
+## VINTF
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 ## Wi-Fi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-legacy \
+    android.hardware.wifi@1.0-service.legacy \
     bcmdhd.cal \
     bcmdhd_sr2.cal \
     hostapd \

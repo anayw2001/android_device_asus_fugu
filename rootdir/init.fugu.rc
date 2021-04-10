@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
-import /vendor/etc/init.fugu.usb.rc
-import /vendor/etc/init.intel.tools.rc
-import /vendor/etc/init.fugu.diag.rc
+import /vendor/etc/init/hw/init.fugu.usb.rc
+import /vendor/etc/init/hw/init.intel.tools.rc
+import /vendor/etc/init/hw/init.fugu.diag.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug mode=0755
@@ -64,11 +64,11 @@ on late-fs
     start surfaceflinger
     start bootanim
 
-    start configstore-hal-1-0
-    start gralloc-2-0
+#    start configstore-hal-1-0
+    start vendor.gralloc-2-0
 
     # Mount RW partitions which need run fsck
-    mount_all /vendor/etc/fstab.qcom --late
+    mount_all /vendor/etc/fstab.fugu --late
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
