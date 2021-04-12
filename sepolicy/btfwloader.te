@@ -1,5 +1,5 @@
-type btfwloader, domain, device_domain_deprecated;
-type btfwloader_exec, exec_type, file_type;
+type btfwloader, coredomain, domain, device_domain_deprecated;
+type btfwloader_exec, exec_type, file_type, system_file_type;
 
 init_daemon_domain(btfwloader)
 

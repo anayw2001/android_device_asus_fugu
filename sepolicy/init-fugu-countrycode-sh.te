@@ -1,5 +1,5 @@
-type init-fugu-countrycode-sh, domain;
-type init-fugu-countrycode-sh_exec, exec_type, file_type;
+type init-fugu-countrycode-sh, domain, coredomain;
+type init-fugu-countrycode-sh_exec, exec_type, file_type, system_file_type;
 
 init_daemon_domain(init-fugu-countrycode-sh)
 
