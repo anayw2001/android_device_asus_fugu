@@ -45,8 +45,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl
 
 ## Audio Policy
-USE_CUSTOM_AUDIO_POLICY := 1
-USE_LEGACY_AUDIO_POLICY := 1
+#USE_CUSTOM_AUDIO_POLICY := 1
+#USE_LEGACY_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
@@ -101,8 +101,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.composer@2.1-impl.fugu \
     android.hardware.graphics.mapper@2.0-impl \
     IMG_graphics \
     hwcomposer.moorefield \
@@ -117,7 +116,8 @@ PRODUCT_PACKAGES += \
 
 ## HDMI-CEC
 PRODUCT_PACKAGES += \
-    android.hardware.tv.cec@1.0-impl
+    android.hardware.tv.cec@1.0-impl \
+    android.hardware.tv.cec@1.0-service
 
 ## Health
 PRODUCT_PACKAGES += \
@@ -213,6 +213,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 ## Permissions
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/privapp-permissions-fugu.xml:system/etc/permissions/privapp-permissions-fugu.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml \
@@ -272,7 +273,8 @@ PRODUCT_PACKAGES += \
 
 ## TV Input
 PRODUCT_PACKAGES += \
-    android.hardware.tv.input@1.0-impl
+    android.hardware.tv.input@1.0-impl \
+    android.hardware.tv.input@1.0-service
 
 ## USB
 PRODUCT_PACKAGES += \
