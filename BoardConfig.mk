@@ -112,6 +112,7 @@ TARGET_KERNEL_ARCH := x86_64
 TARGET_KERNEL_CONFIG := lineage_fugu_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/asus/fugu
+KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/x86/x86_64-linux-android-4.9/bin
 
 ## Legacy
 MALLOC_SVELTE := true
