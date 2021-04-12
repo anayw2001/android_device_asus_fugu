@@ -36,13 +36,9 @@ etc/firmware/vsp.bin.0008.0000.0001
 etc/firmware/vsp.bin.0008.0000.0002
 etc/firmware/vsp.bin.0008.0002.0001
 etc/firmware/vsp.bin.000c.0001.0001
-etc/permissions/com.google.widevine.software.drm.xml
-etc/permissions/nrdp.modelgroup.xml
 etc/vp9_interpredict.binary
 etc/wifi/bcmdhd.cal
 etc/wifi/bcmdhd_sr2.cal
-
--framework/com.google.widevine.software.drm.jar
 
 lib/arm/cpuinfo
 lib/arm/libandroidfw.so
