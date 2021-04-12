@@ -211,7 +211,9 @@ PRODUCT_COPY_FILES += \
 ## Power
 PRODUCT_PACKAGES += \
     power.fugu \
-    android.hardware.power@1.0-impl
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service \
+    android.hardware.power.stats@1.0-service.mock
 
 ## Ramdisk
 PRODUCT_COPY_FILES += \
