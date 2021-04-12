@@ -167,6 +167,7 @@ PRODUCT_PACKAGES += \
     libmixvbp_mpeg2 \
     libmixvbp \
     libOMXVideoDecoderAVC \
+    libOMXVideoDecoderAVCSecure \
     libOMXVideoDecoderH263 \
     libOMXVideoDecoderMPEG2 \
     libOMXVideoDecoderMPEG4 \

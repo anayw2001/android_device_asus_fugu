@@ -14,60 +14,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-######################################################
-# Library used by both policy manager and the audioHAL
-######################################################
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := \
-    alsa_utils.cpp \
-    AudioHardwareOutput.cpp \
-    AudioOutput.cpp \
-    AudioStreamOut.cpp \
-    HDMIAudioOutput.cpp \
-    AudioHardwareInput.cpp \
-    AudioStreamIn.cpp \
-    AudioHotplugThread.cpp \
-    LinearTransform.cpp \
-    local_clock.cpp
-
-LOCAL_C_INCLUDES := \
-    external/tinyalsa/include \
-    $(call include-path-for, audio-utils)
-
-LOCAL_SHARED_LIBRARIES := \
-    libcutils \
-    liblog \
-    libutils \
-    libmedia \
-    libbinder \
-    libhardware \
-    libtinyalsa \
-    libaudiospdif \
-    libaudioutils
-
-# until remotecontrolservice is added to PDK, don't include
-# this in aosp_fugu builds.  only use in regular fugu builds.
-ifneq ($(filter fugu fugu_gmscore_next, $(TARGET_PRODUCT)),)
-LOCAL_C_INCLUDES += \
-    vendor/google_athome/services/RemoteControlService/include
-
-LOCAL_SHARED_LIBRARIES += \
-    libremotecontrolservice
-
-LOCAL_CFLAGS += -DREMOTE_CONTROL_INTERFACE
-endif
-
-LOCAL_STATIC_LIBRARIES += libmedia_helper
-
-LOCAL_MODULE := libatv_audio
-LOCAL_MODULE_TAGS := optional
-
-LOCAL_CFLAGS += -Werror
-
-include $(BUILD_SHARED_LIBRARY)
-
-
 ##################################
 # audioHAL
 ##################################
