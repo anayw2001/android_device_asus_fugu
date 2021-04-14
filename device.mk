@@ -94,6 +94,7 @@ PRODUCT_PACKAGES += \
 ## Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
     IMG_graphics \
@@ -150,7 +151,8 @@ PRODUCT_PACKAGES += \
 
 ## Memtrack
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service
 
 ## OMX
 PRODUCT_PACKAGES += \
@@ -196,6 +198,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 ## Permissions
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/privapp-permissions-fugu.xml:system/etc/permissions/privapp-permissions-fugu.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml \

@@ -42,8 +42,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.allocator</name>
-        <transport>hwbinder</transport>
-        <impl level="generic"></impl>
+        <transport arch="32">passthrough</transport>
         <version>2.0</version>
         <interface>
             <name>IAllocator</name>
@@ -62,7 +61,6 @@
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
         <transport arch="32">passthrough</transport>
-        <impl level="generic"></impl>
         <version>2.0</version>
         <interface>
             <name>IMapper</name>
@@ -80,7 +78,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.memtrack</name>
-        <transport arch="32">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IMemtrack</name>
@@ -89,7 +87,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.power</name>
-        <transport arch="32">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IPower</name>
