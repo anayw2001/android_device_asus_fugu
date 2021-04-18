@@ -1,6 +1,9 @@
 ## Audio
 media.aac_51_output_enabled=true
 
+## Bluetooth
+persist.bluetooth.enablenewavrcp=false
+
 ## DPI
 # xhdpi, while we are hardcoding the 1080 resolution.
 # when we start doing 720 as well, will need to stop hardcoding this.
