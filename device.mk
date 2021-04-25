@@ -45,8 +45,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl
 
 ## Audio Policy
-#USE_CUSTOM_AUDIO_POLICY := 1
-#USE_LEGACY_AUDIO_POLICY := 1
+USE_CUSTOM_AUDIO_POLICY := 1
+USE_LEGACY_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
