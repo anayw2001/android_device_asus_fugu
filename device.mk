@@ -295,6 +295,10 @@ PRODUCT_PACKAGES += \
     vsp.bin.0008.0002.0001 \
     vsp.bin.000c.0001.0001
 
+
+## VINTF
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 ## Wi-Fi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service.legacy \
