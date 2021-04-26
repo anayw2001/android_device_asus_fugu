@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+BUILD_BROKEN_DUP_RULES := true
+
 DEVICE_PATH := device/asus/fugu
 
 ## Use the non-open-source parts, if they're present
