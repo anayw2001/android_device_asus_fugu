@@ -114,6 +114,12 @@ PRODUCT_PACKAGES += \
     android.hardware.tv.cec@1.0-impl \
     android.hardware.tv.cec@1.0-service
 
+## Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-impl.recovery \
+    android.hardware.health@2.1-service
+
 ## Houdini
 # Set the prop to enable arm native bridge
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
