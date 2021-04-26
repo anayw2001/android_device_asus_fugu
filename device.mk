@@ -36,6 +36,7 @@ PRODUCT_PACKAGES += \
     audio.stub.default \
     audio.usb.default \
     libaudio-resampler \
+    libeffects \
     libtinyalsa
 
 ## Audio Effects

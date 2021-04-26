@@ -221,7 +221,6 @@ vendor/lib/hw/gralloc.moorefield.so
 vendor/lib/hw/memtrack.moorefield.so
 vendor/lib/hw/vulkan.moorefield.so
 vendor/lib/libDecoderVP9Hybrid.so
-vendor/lib/libeffects.so
 vendor/lib/libglslcompiler.so
 vendor/lib/libIMGegl.so
 vendor/lib/liboemcrypto.so
