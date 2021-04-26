@@ -59,6 +59,7 @@ PRODUCT_COPY_FILES += \
 ## Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service \
     bt_bcm4354 \
     libbt-vendor
 
@@ -84,6 +85,7 @@ $(call inherit-product-if-exists, frameworks/native/build/tablet-10in-xhdpi-2048
 ## DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
     libdrm \
     dristat \
     drmstat
@@ -155,7 +157,8 @@ PRODUCT_COPY_FILES += \
 
 ## Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
 ## Memtrack
 PRODUCT_PACKAGES += \
