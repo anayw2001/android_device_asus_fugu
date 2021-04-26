@@ -110,7 +110,8 @@ PRODUCT_PACKAGES += \
 
 ## HDMI-CEC
 PRODUCT_PACKAGES += \
-    android.hardware.tv.cec@1.0-impl
+    android.hardware.tv.cec@1.0-impl \
+    android.hardware.tv.cec@1.0-service
 
 ## Houdini
 # Set the prop to enable arm native bridge
@@ -259,7 +260,8 @@ PRODUCT_PACKAGES += \
 
 ## TV Input
 PRODUCT_PACKAGES += \
-    android.hardware.tv.input@1.0-impl
+    android.hardware.tv.input@1.0-impl \
+    android.hardware.tv.input@1.0-service
 
 ## USB
 PRODUCT_PACKAGES += \
