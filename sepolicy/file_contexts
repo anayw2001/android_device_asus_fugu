@@ -39,3 +39,7 @@
 /sys/kernel/debug/ion/heaps                                    u:object_r:gpu_pid_stats_file:s0
 
 /system/bin/init\.fugu\.countrycode\.sh        u:object_r:init-fugu-countrycode-sh_exec:s0
+
+# sysfs files by intel
+/sys/devices/platform/intel_rproc_scu/remoteproc0/virtio0/rpmsg0/(.*)?            u:object_r:sysfs_intel:s0
+/sys/module/drm_intel_mid/parameters/(.*)?                                        u:object_r:sysfs_intel:s0
